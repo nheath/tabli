@@ -4,6 +4,7 @@ import { css } from '@emotion/css';
 import { Layout, LayoutContext } from './LayoutContext';
 import { useContext } from 'react';
 
+// todo: do we need this at all
 const windowListSectionStyle = (layout: Layout) =>
     css({
         borderBottom: '1px solid #bababa',
@@ -14,6 +15,20 @@ const windowListSectionStyle = (layout: Layout) =>
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'stretch',
+        // flexWrap: 'wrap',
+        // gap: "2em",
+
+        // display: 'block',
+
+        // justifyContent: 'stretch',
+        // // border: '1px solid blue',
+        // // flexDirection: 'column',
+        // // flexDirection: 'row',
+        // // alignItems: 'stretch',
+        // // width: '100%',
+        // // maxHeight: "800px",
+        // // flexBasis: "100%",
+        // // flexShrink: 0,
     });
 
 const windowListSectionHeaderStyle = (layout: Layout) =>
@@ -23,10 +38,14 @@ const windowListSectionHeaderStyle = (layout: Layout) =>
         fontWeight: 900,
         fontSize: layout.sectionHeaderFontSize,
         marginBottom: layout.sectionHeaderMarginBottom,
+        background: 'blue'
     });
 
 const windowListChildrenContainerStyle = css({
     marginLeft: 8,
+    flexWrap: 'wrap',
+    width: '100%',
+    border: '3px solid red',
 });
 
 interface WindowListSectionProps {
@@ -62,9 +81,13 @@ const WindowListSection: React.FC<WindowListSectionProps> = ({
         sectionDivProps.ref = focusedRef;
     }
     return (
-        <div {...sectionDivProps}>
+        <div {...sectionDivProps}
+        style={{
+            // background: "red"
+        }}>
             {header}
-            <div className={windowListChildrenContainerStyle}>{children}</div>
+            {children}
+            {/* <div className={windowListChildrenContainerStyle}>{children}</div> */}
         </div>
     );
 };

@@ -61,7 +61,7 @@ const TabWindowList: React.FC<TabWindowListProps> = ({
         );
     }
 
-    var focusedWindowElem: JSX.Element[] = [];
+    // var focusedWindowElem: JSX.Element[] = [];
     var openWindows: JSX.Element[] = [];
     var savedWindows: JSX.Element[] = [];
 
@@ -71,10 +71,10 @@ const TabWindowList: React.FC<TabWindowListProps> = ({
 
         var key = tabWindow.key;
         var isOpen = tabWindow.open;
-        const isFocused = isOpen && currentWindowId === tabWindow.openWindowId;
+        // const isFocused = isOpen && currentWindowId === tabWindow.openWindowId;
 
         // focused property will only be true if isFocused and no rel notes to display:
-        const focusedProp = !showRelNotes && isFocused;
+        const focusedProp = !showRelNotes; // && isFocused;
 
         var isSelected = i === selectedWindowIndex;
         const trueSelectedTabIndex = isSelected ? selectedTabIndex : -1;
@@ -98,9 +98,11 @@ const TabWindowList: React.FC<TabWindowListProps> = ({
                 expandAll={expandAll}
             />
         );
-        if (isFocused) {
-            focusedWindowElem = [windowElem];
-        } else if (isOpen) {
+        // if (isFocused) {
+        //     focusedWindowElem = [windowElem];
+        // } else
+
+        if (isOpen) {
             openWindows.push(windowElem);
         } else {
             savedWindows.push(windowElem);
@@ -110,7 +112,7 @@ const TabWindowList: React.FC<TabWindowListProps> = ({
     var otherOpenSection = null;
     if (openWindows.length > 0) {
         otherOpenSection = (
-            <WindowListSection title="Other Open Windows">
+            <WindowListSection title="">
                 {openWindows}
             </WindowListSection>
         );
@@ -126,17 +128,23 @@ const TabWindowList: React.FC<TabWindowListProps> = ({
     }
 
     return (
-        <div>
+        <section data-type="TabWindowList" style={{
+            width: '100%',
+            // change display here as alternative to flex in FilteredTabWindowUI.getListStyle
+            display: 'block',
+            columnWidth: '600px',
+            columnGap: '10px',
+        }}>
             {relNotesSection}
-            <WindowListSection
+            {/* <WindowListSection
                 focusedRef={focusedTabWindowRef}
                 title="Current Window"
             >
                 {focusedWindowElem}
-            </WindowListSection>
+            </WindowListSection> */}
             {otherOpenSection}
             {savedSection}
-        </div>
+        </section>
     );
 };
 

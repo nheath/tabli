@@ -52,6 +52,7 @@ interface TabManagerStateProps {
     archiveFolderId: string;
     currentWindowId: number; // current browser window (or none)
     popoutWindowId: number; // Tabli popout window, if open (or none)
+    tabId: number; // current tab (or none)
     // chrome window id of window with focus
     showRelNotes: boolean;
     expandAll: boolean;
@@ -75,6 +76,7 @@ const tabManagerStateDefaults: TabManagerStateProps = {
     archiveFolderId: 'ERROR_ID',
     currentWindowId: CHROME_WINDOW_ID_NONE,
     popoutWindowId: CHROME_WINDOW_ID_NONE,
+    tabId: CHROME_WINDOW_ID_NONE,
     // chrome window id of window with focus
     showRelNotes: true,
     expandAll: true,

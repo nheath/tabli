@@ -214,6 +214,12 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
         }
     };
 
+    const handleTabButtonClick = (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
+        actions.showTab(stateRef);
+    }
+
     const handleExpandToggleClick = () => {
         actions.toggleExpandAll(stateRef);
     };
@@ -228,6 +234,18 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
             className={styles.toolbarButton(theme)}
             title={popDesc}
             onClick={handlePopoutClick}
+        >
+            <div className={cx(styles.toolbarButtonSVGIconContainer(theme))}>
+                {svg.tab}
+            </div>
+        </button>
+    );
+
+    const showTabButton = (
+        <button
+            className={styles.toolbarButton(theme)}
+            title={'Show Tabli Tab'}
+            onClick={handleTabButtonClick}
         >
             <div className={cx(styles.toolbarButtonSVGIconContainer(theme))}>
                 {popSVG}
@@ -257,7 +275,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
     return (
         <div className={toolbarOuterContainerStyle}>
             <div className={toolbarInnerContainerStyle}>
-                <GrowRight>{popoutButton}</GrowRight>
+                <GrowRight>{popoutButton}{showTabButton}</GrowRight>
                 <Centered>
                     <GrowRight>
                         <MenuButton stateRef={stateRef} />

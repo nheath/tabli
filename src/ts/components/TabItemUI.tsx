@@ -34,19 +34,6 @@ const tabItemHoverVisible = css`
     }
 `;
 
-const audibleIconStyle = cx(styles.headerButton, styles.audibleIcon);
-
-const getDragContainerStyle = (
-    isDragging: boolean,
-    draggableStyle: any,
-    snapshot: any
-) => {
-    return {
-        // styles we need to apply on draggables
-        ...draggableStyle,
-    };
-};
-
 export interface TabItemUIProps {
     tabWindow: TabWindow;
     tab: TabItem;
@@ -195,7 +182,7 @@ const TabItemUI: React.FunctionComponent<TabItemUIProps> = ({
             activeStyle,
             selectedStyle,
             dropStyle,
-            dragStyle
+            dragStyle,
         );
         return tabItemStyle;
     };
@@ -249,17 +236,14 @@ const TabItemUI: React.FunctionComponent<TabItemUIProps> = ({
                 // console.log({ dragProvided, dragSnapshot });
                 // for debugging: const blueBorder = css({ border: '1px solid #0000ff' });
                 return (
-                    <div
-                        ref={dragProvided.innerRef}
-                        {...dragProvided.draggableProps}
-                        {...dragProvided.dragHandleProps}
-                        style={getDragContainerStyle(
-                            dragSnapshot.isDragging,
-                            dragProvided.draggableProps.style,
-                            dragSnapshot
-                        )}
-                    >
+                    // <div
+                    //
+                    // >
                         <div
+                            ref={dragProvided.innerRef}
+                            {...dragProvided.draggableProps}
+                            {...dragProvided.dragHandleProps}
+                            style={dragProvided.draggableProps.style}
                             className={
                                 getTabItemStyle(dragSnapshot.isDragging) +
                                 ' tabItemHoverContainer'
@@ -285,7 +269,7 @@ const TabItemUI: React.FunctionComponent<TabItemUIProps> = ({
                                 {closeButton}
                             </div>
                         </div>
-                    </div>
+                    // </div>
                 );
             }}
         </Draggable>

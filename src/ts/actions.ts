@@ -596,6 +596,25 @@ export const hidePopout = async (
     return winStore;
 };
 
+export const showTab = (stateRef: StateRef<TabManagerState>) => {
+    const tabId = mutableGet(stateRef).tabId;
+    console.log({
+        msg: 'showTab',
+        tabId,
+    });
+    if (tabId && tabId !== chrome.windows.WINDOW_ID_NONE) {
+        // chromep.windows.update(tabId, { focused: true });
+        chromep.tabs.update(tabId, { active: true });
+    } else {
+        console.log('creating tab');
+        chromep.tabs.create({
+            url: 'tab.html',
+            active: true,
+        });
+    }
+};
+
+
 export function toggleExpandAll(storeRef: TMSRef) {
     update(storeRef, (st) => {
         const allWindows = st.getAll();

@@ -624,11 +624,11 @@ function registerEventHandlers(stateRef: StateRef<TabManagerState>) {
             return state.setCurrentWindowId(windowId);
         });
     });
-    /*      
+    /*
         {
             windowTypes: ['normal']
         }
-    ); 
+    );
     */
 
     // tab events:
@@ -1038,6 +1038,9 @@ async function main() {
 
             if (command === 'show_popout') {
                 actions.showPopout(stateRef);
+            }
+            else if (command == 'show_tab') {
+                actions.showTab(stateRef);
             }
         });
         savedState.init(stateRef);

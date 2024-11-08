@@ -23,6 +23,7 @@ export interface Theme {
 export interface ThemeMap {
     light: Theme;
     dark: Theme;
+    nhdark: Theme;
 }
 export type ThemeName = keyof ThemeMap;
 
@@ -64,8 +65,27 @@ export const themes: ThemeMap = {
         revertColor: '#7472ff',
         revertHover: '#b4b3ff',
         scrollbarColor: 'dark'
+    },
+    nhdark: {
+        foreground: '#cccccc',
+        background: '#222222',
+        buttonBackground: '#333333',
+        windowBorder: '#343536',
+        windowSelectedBorder: '#343536',
+        lightBorder: '#cacaca',
+        tabItemHover: '#424345',
+        menuItemHover: '#424345',
+        buttonHover: '#424345',
+        headerBackground: '#141415',
+        closedGray: '#888888',
+        headerButtonColor: '#cccccc',
+        headerButtonHover: '#ffffff',
+        tabCloseHoverBackground: '#5f6368',
+        revertColor: '#7472ff',
+        revertHover: '#b4b3ff',
+        scrollbarColor: 'dark'
     }
 };
 export const ThemeContext = React.createContext(
-    themes.light // default value
+    themes.nhdark // default value
 );

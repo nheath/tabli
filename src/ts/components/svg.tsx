@@ -63,6 +63,35 @@ export const popin = (
     </svg>
 );
 
+export const tab = (
+    <svg
+        className={svgIconStyle}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+    >
+        <g transform="translate(50 50) scale(0.69 0.69) rotate(-90) translate(-50 -50)">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 100 100"
+                x="0px"
+                y="0px"
+            >
+                <g data-name="Group">
+                    <path
+                        data-name="Path"
+                        d="M90.7,12.5v-.7l-.2-.4-.2-.3-.5-.6h0L89,9.9l-.3-.2-.4-.2H65.1a4,4,0,1,0,0,8H77.1L41.2,53.1a4,4,0,1,0,5.7,5.7L82.8,22.9V34.9a4,4,0,0,0,8,0V13.2h0A4,4,0,0,0,90.7,12.5Z"
+                    ></path>
+                    <path
+                        data-name="Path"
+                        d="M21.2,90.8H68.6a12,12,0,0,0,12-12V50.5a4,4,0,1,0-8,0V78.8a4,4,0,0,1-4,4H21.2a4,4,0,0,1-4-4V31.4a4,4,0,0,1,4-4H49.5a4,4,0,0,0,0-8H21.2a12,12,0,0,0-12,12V78.8A12,12,0,0,0,21.2,90.8Z"
+                    ></path>
+                </g>
+            </svg>
+        </g>
+    </svg>
+);
+
 const menuStyle = css`
     margin: 2px;
 `;
@@ -80,19 +109,6 @@ export const menu = (
     </svg>
 );
 
-export const expandMore = (
-    <svg
-        className={svgIconStyle}
-        xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
-        viewBox="4 4 16 16"
-    >
-        <path opacity=".87" fill="none" d="M24 24H0V0h24v24z" />
-        <path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z" />
-    </svg>
-);
-
 const debugHelper = css({
     backgroundColor: 'yellow',
 });
@@ -105,10 +121,86 @@ export const expandLess = (
         height="100%"
         viewBox="4 4 16 16"
     >
+        <path opacity=".87" fill="none" d="M24 24H0V0h24v24z" />
+        <path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z" />
+    </svg>
+);
+
+export const expandMore = (
+    <svg
+        className={svgIconStyle}
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        viewBox="4 4 16 16"
+    >
         <path fill="none" d="M0 0h24v24H0V0z" />
         <path d="M11.29 8.71L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.38-.39-1.02-.39-1.41 0z" />
     </svg>
 );
+
+// export const expandlessNew = (
+//     <svg
+//         className={svgIconStyle}
+//         xmlns="http://www.w3.org/2000/svg"
+//         version="1.1"
+//         // fill="#000000"
+//         // xmlns:xlink="http://www.w3.org/1999/xlink"
+//         // xml:space="preserve"
+//         // viewBox="0 0 96.154 96.154"
+//         viewBox="4 4 16 16"
+//     >
+//         <g id="SVGRepo_bgCarrier"
+//             stroke-width="0"></g>
+//         <g id="SVGRepo_tracerCarrier"
+//             stroke-linecap="round"
+//             stroke-linejoin="round"></g>
+//         <g id="SVGRepo_iconCarrier">
+//             <g>
+//                 <path d="M0.561,20.971l45.951,57.605c0.76,0.951,2.367,0.951,3.127,0l45.956-57.609c0.547-0.689,0.709-1.716,0.414-2.61 c-0.061-0.187-0.129-0.33-0.186-0.437c-0.351-0.65-1.025-1.056-1.765-1.056H2.093c-0.736,0-1.414,0.405-1.762,1.056 c-0.059,0.109-0.127,0.253-0.184,0.426C-0.15,19.251,0.011,20.28,0.561,20.971z"></path>
+//             </g>
+//         </g>
+//     </svg>
+// );
+
+// export const expandLess = (
+//     <svg
+//         className={svgIconStyle}
+//         viewBox="141.4112 140.2133 10.57 6.1255"
+//         width="10.57"
+//         height="6.1255"
+//         xmlns="http://www.w3.org/2000/svg">
+//         <g id="SVGRepo_iconCarrier"
+//             transform="matrix(0.10992800444364546, 0, 0, 0.09812500327825545, 141.41116333007812, 138.5585174560547)"
+//         // style=""
+//         >
+//             <g>
+//                 <path d="M0.561,20.971l45.951,57.605c0.76,0.951,2.367,0.951,3.127,0l45.956-57.609c0.547-0.689,0.709-1.716,0.414-2.61 c-0.061-0.187-0.129-0.33-0.186-0.437c-0.351-0.65-1.025-1.056-1.765-1.056H2.093c-0.736,0-1.414,0.405-1.762,1.056 c-0.059,0.109-0.127,0.253-0.184,0.426C-0.15,19.251,0.011,20.28,0.561,20.971z" />
+//             </g>
+//         </g>
+//     </svg>
+// );
+
+// export const expandMore = (
+//     <svg
+//         className={svgIconStyle}
+//         viewBox="157.7716 137.9373 6.1255 10.57"
+//         width="6.1255"
+//         height="10.57"
+//         xmlns="http://www.w3.org/2000/svg">
+//         <g id="g-1"
+//             transform="matrix(0, -0.109928011894, 0.098125003278, 0, 112.757187657608, 95.145709140378)"
+//         // style="transform-origin: 48.0772px 48.0767px;"
+//         // style={css({
+//         //     transformOrigin: '48.0772px 48.0767px',
+//         // })}
+//         >
+//             <g>
+//                 <path d="M0.561,20.971l45.951,57.605c0.76,0.951,2.367,0.951,3.127,0l45.956-57.609c0.547-0.689,0.709-1.716,0.414-2.61 c-0.061-0.187-0.129-0.33-0.186-0.437c-0.351-0.65-1.025-1.056-1.765-1.056H2.093c-0.736,0-1.414,0.405-1.762,1.056 c-0.059,0.109-0.127,0.253-0.184,0.426C-0.15,19.251,0.011,20.28,0.561,20.971z" />
+//             </g>
+//         </g>
+//     </svg>
+// );
 
 export const closeIcon = (
     <svg

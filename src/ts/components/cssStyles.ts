@@ -57,6 +57,12 @@ export const tabItem = (theme: Theme, layout: Layout) =>
         '&:hover': {
             backgroundColor: theme.tabItemHover,
         },
+        '&:nth-child(even)': {
+            backgroundColor: '#212529'
+        },
+        '&:nth-child(odd)': {
+            backgroundColor: '#1c1c1f'
+        }
     });
 export const tabItemSelected = (theme: Theme) =>
     css({
@@ -113,6 +119,7 @@ export const windowHeader = (theme: Theme, layout: Layout) =>
         borderBottom: '1px solid #bababa',
         height: layout.windowHeaderHeight,
         maxHeight: layout.windowHeaderHeight,
+        width: '100%',
         paddingLeft: 3,
         paddingRight: 3,
         // marginBottom: 3,
@@ -137,7 +144,8 @@ export const text = css({
     marginLeft: 3,
 });
 export const windowTitle = css({
-    fontWeight: 'bold',
+    fontSize: '1.1rem',
+    // fontWeight: 'bold',
     minWidth: Constants.WINDOW_TITLE_MIN_WIDTH,
 
     /* NOPE -- let flexbox do it: maxWidth: Constants.WINDOW_TITLE_MAX_WIDTH, */

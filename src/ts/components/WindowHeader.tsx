@@ -168,7 +168,7 @@ const WindowHeader: React.FunctionComponent<WindowHeaderProps> = ({
 
     const closeButton = (
         <HeaderButtonSVG
-            className={styles.headerHoverVisible}
+            // className={styles.headerHoverVisible}
             svgElem={svg.closeIcon}
             visible={tabWindow.open}
             title="Close Window"
@@ -229,14 +229,15 @@ const WindowHeader: React.FunctionComponent<WindowHeaderProps> = ({
             }
             onClick={onOpen}
         >
-            <div className={cx(styles.rowItemsFixedWidth)}>
-                {checkItem}
-                <ExpanderButton expanded={expanded} onClick={onExpand} />
-            </div>
+            {/* <div className={cx(styles.rowItemsFixedWidth)}>
+
+            </div> */}
             {titleSpan}
             <div className={cx(styles.rowItemsFixedWidth)}>
                 {revertButton}
+                {checkItem}
                 {closeButton}
+                <ExpanderButton expanded={expanded} onClick={onExpand} />
             </div>
         </div>
     );

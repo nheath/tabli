@@ -36,9 +36,21 @@ const tabWindowSelectedStyle = (theme: Theme) =>
 
 const getListStyle = (isDraggingOver: boolean) =>
     css({
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
+        //compare to TabWindowList styles -- disable for column support there
+        // display: 'flex',
+        // flexDirection: 'column',
+        //end compare
+
+        // display: 'block',
+        // columnWidth: '600px',
+        // columnGap: '10px',
+        // flexShrink: 1,
+        // set flex property to allow element to stack horizontally to fill space
+        // flex: '1 1 auto',
+        // width: '100%',
+        // width: "max-content",
+
+        // border: isDraggingOver ? '2px solid lightgreen' : '2px solid darkgreen',
     });
 
 export interface FilteredTabWindowUIBaseProps {
@@ -208,7 +220,7 @@ const FilteredTabWindowUI: React.FunctionComponent<FilteredTabWindowUIProps> = (
     */
     const droppableId = tabWindow.key;
     return (
-        <div {...windowDivProps}>
+        <section data-type="windowDiv" {...windowDivProps}>
             <Droppable droppableId={droppableId}>
                 {(
                     provided: DroppableProvided,
@@ -225,7 +237,7 @@ const FilteredTabWindowUI: React.FunctionComponent<FilteredTabWindowUIProps> = (
                     </div>
                 )}
             </Droppable>
-        </div>
+        </section>
     );
 };
 
